@@ -16,28 +16,22 @@ public class Main {
 
             //Read data from file and parse into Record
             BufferedReader br =
-                    new BufferedReader( new FileReader("data.txt"));
+                    new BufferedReader(new FileReader("data.txt"));
             String line = br.readLine();
             Records = new ArrayList<Record>();
 
-            while(line != null){
+            while (line != null) {
 
                 String[] itemsStr = line.split(" ");
                 int length = itemsStr.length;
-                int[] itemsInt = new int[length];
-
-                for(int i = 0; i<length;i++){
-                    itemsInt[i]=Integer.parseInt(itemsStr[i]);
-                }
-
-                Records.add(new Record(itemsInt[0],itemsInt[1],itemsInt[2],itemsInt[3]));
-
+                Records.add(new Record(new Person(itemsStr[0]), new Person(itemsStr[1]), Integer.parseInt(itemsStr[2]),
+                        Integer.parseInt(itemsStr[3]), Integer.parseInt(itemsStr[4])));
                 line = br.readLine();
             }
             br.close();
-        }
-        catch (IOException e){
+        } catch (IOException e) {
             System.out.print(e);
         }
+
     }
 }

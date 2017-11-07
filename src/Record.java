@@ -1,29 +1,32 @@
 public class Record {
-    private int caller;
-    private int callee;
+    private Person caller;
+    private Person callee;
     private int time;
-    private int location;
+    private int location_cell_id;
+    private int location_sector_id;
 
-    Record(int _caller, int _callee, int _time, int _location){
+
+    Record(Person _caller, Person _callee, int _time, int _location_cell_id, int _location_sector_id) {
         caller = _caller;
         callee = _callee;
         time = _time;
-        location = _location;
+        location_cell_id = _location_cell_id;
+        location_sector_id = _location_sector_id;
     }
 
-    public int getCaller() {
+    public Person getCaller() {
         return caller;
     }
 
-    public void setCaller(int caller) {
+    public void setCaller(Person caller) {
         this.caller = caller;
     }
 
-    public int getCallee() {
+    public Person getCallee() {
         return callee;
     }
 
-    public void setCallee(int callee) {
+    public void setCallee(Person callee) {
         this.callee = callee;
     }
 
@@ -35,11 +38,19 @@ public class Record {
         this.time = time;
     }
 
-    public int getLocation() {
-        return location;
+    public int getLocation_cell_id() {
+        return location_cell_id;
     }
 
-    public void setLocation(int location) {
-        this.location = location;
+    public void setLocation_cell_id(int location_cell_id) {
+        this.location_cell_id = location_cell_id;
+    }
+
+    public int getLocation_sector_id() {
+        return location_sector_id;
+    }
+
+    public void setLocation_sector_id(int location_sector_id) {
+        this.location_sector_id = location_sector_id;
     }
 }

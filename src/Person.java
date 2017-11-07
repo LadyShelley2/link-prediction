@@ -1,20 +1,25 @@
+import java.util.List;
 import java.util.ArrayList;
 
 public class Person {
-    private int id;
+    private String id;
 
-    int getId(){
+    Person(String _id){
+        this.id = _id;
+    }
+
+    public String getId(){
         return id;
     }
 
-    ArrayList getNeighbor() {
+    List<Person> getNeighbors() {
 
-        ArrayList neighbors = new ArrayList();
+        List<Person> neighbors = new ArrayList();
 
         for (Record r : Main.Records) {
-            if (r.getCaller() == this.id) {
+            if (r.getCaller().getId() == this.id) {
                 neighbors.add(r.getCaller());
-            } else if (r.getCaller() == this.id) {
+            } else if (r.getCaller().getId() == this.id) {
                 neighbors.add(r.getCallee());
             }
         }
